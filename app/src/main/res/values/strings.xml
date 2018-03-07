@@ -16,4 +16,8 @@
     <string name="choose_english">English</string>
     <string name="english_button_send">English</string>
     <string name="action_log_in">Log In</string>
+
+    <!-- Strings related to IndividualChat page-->
+    <string name="individual_chat_page">Conversation</string>
+    <string name="enter">Enter</string>
 </resources>

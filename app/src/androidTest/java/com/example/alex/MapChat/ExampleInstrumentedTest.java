@@ -1,4 +1,4 @@
-package com.example.alex.myapplication;
+package com.example.alex.MapChat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.example.alex.myapplication;
+package com.example.alex.MapChat;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -33,7 +33,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class TabFragment1 extends Fragment implements OnMapReadyCallback{
+public class MapFragment extends Fragment implements OnMapReadyCallback{
 
     private static final String TAG = "LocatrFragment";
 
@@ -131,7 +131,7 @@ public class TabFragment1 extends Fragment implements OnMapReadyCallback{
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //Prompt the user once explanation has been shown
-                                ActivityCompat.requestPermissions(TabFragment1.this.getActivity(),
+                                ActivityCompat.requestPermissions(MapFragment.this.getActivity(),
                                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                                         MY_PERMISSIONS_REQUEST_LOCATION );
                             }
@@ -188,6 +188,7 @@ public class TabFragment1 extends Fragment implements OnMapReadyCallback{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //mClient = new GoogleApiClient.Builder(getActivity()).addApi(LocationServices.API).build();
         mClient = new GoogleApiClient.Builder(getActivity()).addApi(LocationServices.API).build();
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getActivity());

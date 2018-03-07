@@ -1,4 +1,4 @@
-package com.example.alex.myapplication;
+package com.example.alex.MapChat;
 
 /**
  * Created by alex on 06/03/18.

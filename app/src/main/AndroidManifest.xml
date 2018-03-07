@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.alex.myapplication">
+    package="com.example.alex.MapChat">
 
     <uses-permission
         android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -16,11 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.alex.MapChat.MainActivity">
         </activity>
 
 
-        <activity android:name=".ChooseLanguageActivity">
+        <activity android:name="com.example.alex.MapChat.ChooseLanguageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,14 +28,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.alex.MapChat.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".ChooseLanguageActivity">
+            android:parentActivityName="com.example.alex.MapChat.ChooseLanguageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.myapplication.ChooseLanguageActivity" />
+                android:value="com.example.alex.MapChat.ChooseLanguageActivity" />
         </activity>
 
+        <activity
+            android:name="com.example.alex.MapChat.IndividualChat"
+            android:label="@string/individual_chat_page"
+            android:parentActivityName="com.example.alex.MapChat.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.MapChat.MainActivity" />
+        </activity>
+        <!-- TODO we find a way that maps api and translate api reference the same key -->
+        <meta-data
+            android:name="google_api_key"
+            android:value="AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c"/>
