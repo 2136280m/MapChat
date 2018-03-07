@@ -27,4 +27,18 @@ public class ChooseLanguageActivity extends Activity {
         this.startActivity(intent);
     }
 
+    /** Called when the user taps the French button */
+    public void chooseFrench(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("language", "French");
+        this.startActivity(intent);
+    }
+
+    /** Called when the user taps the German button */
+    public void chooseGerman(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("language", "German");
+        this.startActivity(intent);
+    }
+
 }
