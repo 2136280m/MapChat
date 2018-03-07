@@ -17,11 +17,12 @@
         android:text="Enter text here"
         />
 
-    <Button
-        android:id="@+id/translateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter"/>
+        <Button
+            android:id="@+id/translateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onTranslateClick"
+            android:text="@string/enter" />
 
     </LinearLayout>
     <TextView

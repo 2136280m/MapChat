@@ -5,6 +5,9 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.cloud.translate.Translate;
@@ -31,44 +34,48 @@ public class IndividualChat extends AppCompatActivity {
     // todo API_KEY should not be stored in plain sight
     private static final String API_KEY = "AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c";
 
+    TextView textView;
+
+    EditText inputText;
+
+    Button translateButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.individual_chat);
 
-        final TextView textView = (TextView) findViewById(R.id.translatedText);
+         textView = findViewById(R.id.translatedText);
+
+         inputText = findViewById(R.id.inputToTranslate);
+
+         translateButton = findViewById(R.id.translateButton);
+
+         translateButton.setOnClickListener(
+                 new View.OnClickListener() {
+                     public void onClick(View view){
+                         String translated  = Translator.translate("hello","en","de");
+
+                         textView.setText(translated);
+
+                     }
+
+                 }
+         );
+
         final Handler textViewHandler = new Handler();
 
-        TranslateOptions options = TranslateOptions.newBuilder()
-                .setApiKey(API_KEY)
-                .build();
-        /*
-        Translate translate = options.getService();
-
-        final Translation translation = translate.translate("Hello", Translate.TranslateOption.targetLanguage("de"));
-        Toast.makeText(this, translation.getTranslatedText(), Toast.LENGTH_LONG).show();
-        /*
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                TranslateOptions options = TranslateOptions.newBuilder()
-                        .setApiKey(API_KEY)
-                        .build();
-                Translate translate = options.getService();
-                final Translation translation =
-                        translate.translate("Hello World",
-                                Translate.TranslateOption.targetLanguage("de"));
-                textViewHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (textView != null) {
-                            textView.setText(translation.getTranslatedText());
-                        }
-                    }
-                });
-                return null;
-            }
-        }.execute();
-        */
     }
+
+
+
+
+
+    
+
+
+
+
+
+
 }
