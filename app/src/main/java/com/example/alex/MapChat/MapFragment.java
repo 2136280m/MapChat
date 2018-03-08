@@ -3,6 +3,7 @@ package com.example.alex.MapChat;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -47,6 +49,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     Marker mCurrLocationMarker;
     FusedLocationProviderClient mFusedLocationClient;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_fragment1, container, false);
@@ -55,13 +58,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         gMapView.onResume();
 
         gMapView.getMapAsync(this);
+
+        Button createHotspot = view.findViewById(R.id.createHotspotButton);
+        createHotspot.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(), CreateHotspot.class);
+                getActivity().startActivity(intent);
+
+            }
+        });
+
         return view;
     }
 
     @Override
     public void onMapReady(GoogleMap map){
         gMap = map;
-        gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(120000); //two min interval
@@ -192,6 +206,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         mClient = new GoogleApiClient.Builder(getActivity()).addApi(LocationServices.API).build();
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getActivity());
+
+
+
+
+
 
 
 
