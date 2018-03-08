@@ -22,4 +22,8 @@
     <!-- Strings related to IndividualChat page-->
     <string name="individual_chat_page">Conversation</string>
     <string name="enter">Enter</string>
+
+    <!-- String related to Create Hotspot -->
+    <string name="ownerSpinner">You</string>
+
 </resources>

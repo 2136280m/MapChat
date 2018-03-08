@@ -19,6 +19,8 @@
         <activity android:name="com.example.alex.MapChat.MainActivity">
         </activity>
 
+        <activity android:name="com.example.alex.MapChat.CreateHotspot"></activity>
+
 
         <activity android:name="com.example.alex.MapChat.ChooseLanguageActivity">
             <intent-filter>
