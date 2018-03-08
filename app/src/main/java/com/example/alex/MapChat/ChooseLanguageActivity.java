@@ -38,7 +38,7 @@ public class ChooseLanguageActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 //Intent intent = new Intent(Intent.ACTION_VIEW);
-                //intent.setData(Uri.parse(imageAdapter.getItem(position).getImageUrlString()));
+                //intent.setData(imageAdapter.getItem(position).getImageUrlString()));
                 //startActivity(intent);
 
                 //TODO THIS IS NOT WORKING PROPERLY, FIND A WAY TO USE TO ACCESS THE CLASS FROM THE METHOD ABOVE

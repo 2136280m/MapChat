@@ -1,18 +1,31 @@
 package com.example.alex.MapChat;
 
+import android.app.Activity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
+import android.app.ListActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +34,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class IndividualChat extends AppCompatActivity {
+public class IndividualChat extends Activity {
 
     // todo API_KEY should not be stored in plain sight
     private static final String API_KEY = "AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c";
@@ -29,39 +42,44 @@ public class IndividualChat extends AppCompatActivity {
     TextView textView;
     EditText inputText;
     Button translateButton;
-    static ArrayList<Message> messageArray;
-    static int messageId = 0;
+//    static ArrayList<Message> messageArray;
+//    static int messageId = 0;
+//
+//    public static class Message{
+//        String username;
+//        String messageContent;
+//        int id;
+//
+//        public Message(String username, String messageContent) {
+//            this.username = username;
+//            this.id = messageId;
+//            messageId++;
+//            this.messageContent = messageContent;
+//        }
+//
+//        public String getUsername() {
+//            return username;
+//        }
+//
+//        public int getMessageId() {
+//            return messageId;
+//        }
+//
+//        public String getMessageContent() {
+//            return messageContent;
+//        }
+//    }
+//
+//    static void populateMessageArrayList(){
+//        messageArray.add(new Message("John","this is the first message"));
+//        messageArray.add(new Message("Sally","this is the second message"));
+//        messageArray.add(new Message("James","hi there everyone"));
+//    }
+//
+//    static final String[] FRUITS = new String[] { "Apple", "Avocado", "Banana",
+//            "Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
+//            "Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
 
-    public static class Message{
-        String username;
-        String messageContent;
-        int id;
-
-        public Message(String username, String messageContent) {
-            this.username = username;
-            this.id = messageId;
-            messageId++;
-            this.messageContent = messageContent;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        public int getMessageId() {
-            return messageId;
-        }
-
-        public String getMessageContent() {
-            return messageContent;
-        }
-    }
-
-    static void populateMessageArrayList(){
-        messageArray.add(new Message("John","this is the first message"));
-        messageArray.add(new Message("Sally","this is the second message"));
-        messageArray.add(new Message("James","hi there everyone"));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +96,15 @@ public class IndividualChat extends AppCompatActivity {
                          String translated  = Translator.translate("hello","en","de");
                          textView.setText(translated);
                      }
-
                  }
          );
-
-
-
     }
 
 
 
 
 
-    
+
 
 
 

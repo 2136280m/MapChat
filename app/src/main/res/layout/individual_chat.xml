@@ -8,14 +8,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/top_bar"
-        >
-    <EditText
-        android:id="@+id/inputToTranslate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter text here"
-        />
+        android:id="@+id/top_bar">
+
+        <EditText
+            android:id="@+id/inputToTranslate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter text here" />
 
         <Button
             android:id="@+id/translateButton"
@@ -25,13 +24,13 @@
             android:text="@string/enter" />
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/translatedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:text="This is an individual Chat"
-        android:layout_below="@+id/top_bar"
-        />
+        android:layout_below="@+id/top_bar" />
 
 </RelativeLayout>
