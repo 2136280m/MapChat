@@ -9,14 +9,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tomer.fadingtextview.FadingTextView;
+
 public class ChooseLanguageActivity extends Activity {
 
     //public static final String LANGUAGE_CHOSEN= "com.mapchat.mapchat.MESSAGE";
     public static final String LANGUAGE_CHOSEN= "";
+    FadingTextView fadingTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_language);
+
+        fadingTextView = (FadingTextView)findViewById(R.id.fadingTextView);
+        fadingTextView.setTimeout(FadingTextView.SECONDS,2);
     }
 
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pleasechooselanguage">
+        <item> Please Choose Your Language</item>
+        <item> S\'il vous plaît Choisissez votre langue</item>
+        <item> Bitte wähle deine Sprache</item>
+        <item> 請選擇你的語言 </item>
+        <item> επιλέξτε τη γλώσσα σας </item>
+
+    </string-array>
+</resources>
