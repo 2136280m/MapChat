@@ -49,8 +49,8 @@ public class ChooseLanguageActivity extends Activity {
         });
     }
 
-
-    /** Called when the user taps the English button */
+/*    // None of this is needed any more but I'm too afraid to delete it
+    *//** Called when the user taps the English button *//*
     public void chooseEnglish(View view) {
         Class test2 = "LoginActivity".getClass();
         Intent intent = new Intent(this, LoginActivity.class);
@@ -58,18 +58,18 @@ public class ChooseLanguageActivity extends Activity {
         this.startActivity(intent);
     }
 
-    /** Called when the user taps the French button */
+    *//** Called when the user taps the French button *//*
     public void chooseFrench(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.putExtra("language", "French");
         this.startActivity(intent);
     }
 
-    /** Called when the user taps the German button */
+    *//** Called when the user taps the German button *//*
     public void chooseGerman(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.putExtra("language", "German");
         this.startActivity(intent);
-    }
+    }*/
 
 }
