@@ -38,7 +38,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback{
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private static final String TAG = "LocatrFragment";
 
@@ -50,6 +50,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     LocationRequest mLocationRequest;
     Location mLastLocation;
     Marker mCurrLocationMarker;
+    Marker mButeMarker;
+    Marker mLibraryMarker;
+
     Marker mHotspotMarker;
     FusedLocationProviderClient mFusedLocationClient;
 
@@ -75,6 +78,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
             }
         });
+
+
 
         if (getArguments() != null){
             String mParam = getArguments().getString("michael");
@@ -113,7 +118,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
             mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
             gMap.setMyLocationEnabled(true);
         }
-        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(49.39,-124.83), 20));
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.873564,-4.292687), 15));
+
+        gMap.setOnInfoWindowClickListener(this);
 
     }
 
@@ -135,9 +142,29 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
                 mCurrLocationMarker = gMap.addMarker(markerOptions);
 
+
+                //place bute hall java tutorial marker
+                LatLng latLng2 = new LatLng(55.871651,-4.287940);
+                MarkerOptions butemarker = new MarkerOptions();
+                butemarker.position(latLng2);
+                butemarker.title("Java Tutorial: Bute Hall");
+                butemarker.snippet("Request Invite");
+                butemarker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+                mButeMarker = gMap.addMarker(butemarker);
+
+                //place library marker
+                LatLng latLng3 = new LatLng(55.873518,-4.288631);
+                MarkerOptions LibraryMarker = new MarkerOptions();
+                LibraryMarker.position(latLng3);
+                LibraryMarker.title("Library Study Group");
+                LibraryMarker.snippet("Joined");
+                LibraryMarker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                mLibraryMarker = gMap.addMarker(LibraryMarker);
                 //move map camera
-                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11));
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
             }
+
+
         };
 
     };
@@ -226,12 +253,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
 
     }
+
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Toast.makeText(this.getContext(), "Invite Requested",
+                Toast.LENGTH_SHORT).show();
+
+
+    }
     @Subscribe
     public void onEvent(HotspotCreated event){
         Toast.makeText(this.getContext(),event.hotspotName, Toast.LENGTH_LONG).show();
 
         gMap.addMarker(new MarkerOptions()
-                .position(new LatLng(55.873747,-4.291445))
+                .position(new LatLng(55.873301,-4.292685))
                 .title(event.hotspotName));
     }
 

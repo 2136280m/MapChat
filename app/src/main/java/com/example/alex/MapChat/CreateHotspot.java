@@ -52,7 +52,7 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
         int width = dm. widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.9),(int) (height*.9));
+        getWindow().setLayout((int) (width*.9),(int) (height*.95));
 
         nameInput = findViewById(R.id.hotspotNameInput);
 
