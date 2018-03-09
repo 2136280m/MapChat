@@ -90,7 +90,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                logIn(view);
             }
         });
 

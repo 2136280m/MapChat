@@ -19,6 +19,9 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
 
     Spinner inviteSpinner;
 
+    Bundle bundle = new Bundle();
+
+
     //class members
     String owners[] = {"You", "Others"};
 
@@ -66,6 +69,11 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
 // TODO Auto-generated method stub
+
+    }
+
+
+    public void onSubmit(View  view){
 
     }
 

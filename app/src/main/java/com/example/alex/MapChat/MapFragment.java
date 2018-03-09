@@ -47,6 +47,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     LocationRequest mLocationRequest;
     Location mLastLocation;
     Marker mCurrLocationMarker;
+    Marker mHotspotMarker;
     FusedLocationProviderClient mFusedLocationClient;
 
 
