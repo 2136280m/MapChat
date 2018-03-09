@@ -39,20 +39,6 @@ public class ImageAdapter extends BaseAdapter {
             new ImageWithUrl(R.drawable.montenegro_square_icon_640,"LoginActivity")
     };
 
-//    private Integer[] mImageIds = {
-//            R.drawable.united_kingdom_square_icon_640, R.drawable.france_square_icon_640,
-//            R.drawable.germany_square_icon_640, R.drawable.afghanistan_square_icon_640,
-//            R.drawable.american_samoa_square_icon_640, R.drawable.andorra_square_icon_640,
-//            R.drawable.angola_square_icon_640, R.drawable.argentina_square_icon_640,
-//            R.drawable.barbados_square_icon_640, R.drawable.bosnia_and_herzegovina_square_icon_640,
-//            R.drawable.cambodia_square_icon_640, R.drawable.cayman_islands_square_icon_640,
-//            R.drawable.central_african_republic_square_icon_640, R.drawable.chad_square_icon_640,
-//            R.drawable.china_square_icon_640, R.drawable.gambia_square_icon_640,
-//            R.drawable.hong_kong_square_icon_640, R.drawable.hungary_square_icon_640,
-//            R.drawable.ireland_square_icon_640, R.drawable.japan_square_icon_640,
-//            R.drawable.kenya_square_icon_640, R.drawable.montenegro_square_icon_640
-//    };
-
     public ImageAdapter(Context c) {
         mContext = c;
     }
