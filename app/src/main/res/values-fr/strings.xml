@@ -22,7 +22,7 @@
     <string name="action_log_in">S\'identifier</string>
     <string name="individual_chat_page">Conversation</string>
     <string name="enter">Entrer</string>
-    <string name="ownerSpinner">Plans Chats Profil MapChat se connecter Bonjour fragment vierge Email Mot de passe (facultatif) Connexion ou Inscription se connecter Cette adresse e-mail est invalide Ce mot de passe est trop court Ce mot de passe est incorrect Ce champ est requis Les autorisations de contacts sont nécessaires pour fournir des complétions de courrier électronique. Anglais Anglais français allemand S\'identifier Conversation Entrer Toi Envoyer Entrez un message</string>
+    <string name="ownerSpinner">Tu</string>
     <string name="send">Envoyer</string>
     <string name="enter_message">"Entrez un message "</string>
 </resources>
