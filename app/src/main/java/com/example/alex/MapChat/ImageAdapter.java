@@ -18,7 +18,6 @@ public class ImageAdapter extends BaseAdapter {
     // references to our images
     private ImageWithUrl[] mImageIds = {
             new ImageWithUrl(R.drawable.united_kingdom_square_icon_640, "LoginActivity"),
-            new ImageWithUrl(R.drawable.united_kingdom_square_icon_640, "LoginActivity"),
             new ImageWithUrl(R.drawable.american_samoa_square_icon_640,"LoginActivity"),
             new ImageWithUrl(R.drawable.afghanistan_square_icon_640, "LoginActivity"),
             new ImageWithUrl(R.drawable.andorra_square_icon_640,"LoginActivity"),

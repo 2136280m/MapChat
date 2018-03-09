@@ -23,5 +23,5 @@
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:background="@drawable/rounded_corner"
-    android:shadowColor="#00FF00"/>
+    android:textColor="#5eb26c"/>
 

@@ -26,4 +26,8 @@
     <!-- String related to Create Hotspot -->
     <string name="ownerSpinner">You</string>
 
+    <!-- String related to individual chat -->
+    <string name="send">Send</string>
+    <string name="enter_message">Enter Message</string>
+
 </resources>
