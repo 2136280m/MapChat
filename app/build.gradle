@@ -45,5 +45,6 @@ dependencies {
     compile 'com.google.cloud:google-cloud-translate:1.20.0'
     compile 'com.google.cloud:google-cloud-translate:1.14.0'
     compile 'com.tomer:fadingtextview:1.8.1'
+    compile 'org.greenrobot:eventbus:3.1.1'
 
 }
