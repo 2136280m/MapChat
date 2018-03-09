@@ -21,7 +21,7 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class Translator {
-    private static String key = "AIzaSyDymF-_GTUelaiSJYO1ET6PZZrDbX9QqP8";
+    private static String API_KEY = "AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c";
 
     public Translator() {
     }
@@ -38,20 +38,18 @@ public class Translator {
 
         StringBuilder result = new StringBuilder();
         try {
-            String encodedText = URLEncoder.encode(text, "UTF-8");
-            String urlStr = "https://www.googleapis.com/language/translate/v2?key=" + key +
-                    "&q=" + encodedText +
-                    "&target=" + to + "&source=" + from;
+            String encodedString = URLEncoder.encode(text, "UTF-8");
+            String urlStr = "https://www.googleapis.com/language/translate/v2?key=" + API_KEY + "&q=" + encodedString + "&target=" + to + "&source=" + from;
 
             URL url = new URL(urlStr);
-
-            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             InputStream stream;
 
-            if (conn.getResponseCode() == 200) { //success
-                stream = conn.getInputStream();
+            //if successful
+            if (connection.getResponseCode() == 200) {
+                stream = connection.getInputStream();
             } else
-                stream = conn.getErrorStream();
+                stream = connection.getErrorStream();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
             String line;
@@ -60,7 +58,6 @@ public class Translator {
             }
 
             JsonParser parser = new JsonParser();
-
             JsonElement element = parser.parse(result.toString());
 
             if (element.isJsonObject()) {
@@ -75,7 +72,7 @@ public class Translator {
                 }
             }
 
-            if (conn.getResponseCode() != 200) {
+            if (connection.getResponseCode() != 200) {
                 System.err.println(result);
             }
 
