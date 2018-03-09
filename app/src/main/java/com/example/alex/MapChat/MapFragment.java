@@ -35,6 +35,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 public class MapFragment extends Fragment implements OnMapReadyCallback{
 
     private static final String TAG = "LocatrFragment";
@@ -49,6 +52,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     Marker mCurrLocationMarker;
     Marker mHotspotMarker;
     FusedLocationProviderClient mFusedLocationClient;
+
+    EventBus bus = EventBus.getDefault();
+
 
 
     @Override
@@ -69,6 +75,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
             }
         });
+
+        if (getArguments() != null){
+            String mParam = getArguments().getString("michael");
+            Toast.makeText(getActivity(), "michael",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
 
         return view;
     }
@@ -208,13 +222,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getActivity());
 
+        bus.register(this);
 
 
+    }
+    @Subscribe
+    public void onEvent(HotspotCreated event){
+        Toast.makeText(this.getContext(),event.hotspotName, Toast.LENGTH_LONG).show();
 
-
-
-
-
+        gMap.addMarker(new MarkerOptions()
+                .position(new LatLng(55.873747,-4.291445))
+                .title(event.hotspotName));
     }
 
     @Override
@@ -234,7 +252,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     public void onResume(){
         super.onResume();
         gMapView.onResume();
+
+
+
     }
+
 
     @Override
     public void onPause(){
