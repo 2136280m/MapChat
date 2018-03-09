@@ -36,4 +36,16 @@
     <string name="send">Send</string>
     <string name="enter_message">Enter Message</string>
 
+    <string-array name="ListOfChats">
+        <item>Ibiza Chat</item>
+        <item>London Work Group</item>
+        <item>Paris</item>
+        <item>Rome</item>
+        <item>Some Chat 1</item>
+        <item>Some Chat 2</item>
+        <item>Some Chat 3</item>
+        <item>Some Chat 4</item>
+        <item>Some Chat 5</item>
+    </string-array>
+
 </resources>

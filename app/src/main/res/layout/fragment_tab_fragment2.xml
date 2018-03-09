@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <ListView
+<<<<<<< HEAD
         android:id="@+id/listView"
         android:layout_width="wrap_content"
+=======
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+>>>>>>> b9a72d0c93e8d99a0e532de7cc51c53aba2bdadb
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="This is where a list of chats will go"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        >
+    </ListView>
 
+<<<<<<< HEAD
 </RelativeLayout>
+=======
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </TextView>
+
+</LinearLayout>
+>>>>>>> b9a72d0c93e8d99a0e532de7cc51c53aba2bdadb
