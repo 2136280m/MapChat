@@ -4,19 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="This is where a list of chats will go"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <Button
-        android:id="@+id/demo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Move to demo chat"
-        />
 
 </RelativeLayout>
