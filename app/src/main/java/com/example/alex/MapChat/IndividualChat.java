@@ -34,81 +34,36 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class IndividualChat extends Activity {
+public class IndividualChat extends ListActivity {
+    //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
+    ArrayList<String> listItems=new ArrayList<String>();
 
-    // todo API_KEY should not be stored in plain sight
-    private static final String API_KEY = "AIzaSyA76E4nlLk0_AVd5XV-L4yIiLGWf7qkz3c";
-
-    TextView textView;
+    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
+    ArrayAdapter<String> adapter;
     EditText inputText;
-    Button translateButton;
-//    static ArrayList<Message> messageArray;
-//    static int messageId = 0;
-//
-//    public static class Message{
-//        String username;
-//        String messageContent;
-//        int id;
-//
-//        public Message(String username, String messageContent) {
-//            this.username = username;
-//            this.id = messageId;
-//            messageId++;
-//            this.messageContent = messageContent;
-//        }
-//
-//        public String getUsername() {
-//            return username;
-//        }
-//
-//        public int getMessageId() {
-//            return messageId;
-//        }
-//
-//        public String getMessageContent() {
-//            return messageContent;
-//        }
-//    }
-//
-//    static void populateMessageArrayList(){
-//        messageArray.add(new Message("John","this is the first message"));
-//        messageArray.add(new Message("Sally","this is the second message"));
-//        messageArray.add(new Message("James","hi there everyone"));
-//    }
-//
-//    static final String[] FRUITS = new String[] { "Apple", "Avocado", "Banana",
-//            "Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
-//            "Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
-
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.individual_chat);
-
-         textView = findViewById(R.id.translatedText);
-         inputText = findViewById(R.id.inputToTranslate);
-         translateButton = findViewById(R.id.translateButton);
-
-         translateButton.setOnClickListener(
-                 new View.OnClickListener() {
-                     public void onClick(View view){
-                         String translated  = Translator.translate("hello","en","de");
-                         textView.setText(translated);
-                     }
-                 }
-         );
+        inputText = (EditText) findViewById(R.id.inputText);
+        adapter=new ArrayAdapter<String>(this,R.layout.message_layout,listItems);
+        setListAdapter(adapter);
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
+    public void addItems(View v) {
+        listItems.add(inputText.getText().toString());
+        adapter.notifyDataSetChanged();
+    }
 }
+
+
+//translateButton.setOnClickListener(
+//        new View.OnClickListener() {
+//public void onClick(View view){
+//        String translated  = Translator.translate("hello","en","de");
+//        textView.setText(translated);
+//        }
+//        }
+//        );

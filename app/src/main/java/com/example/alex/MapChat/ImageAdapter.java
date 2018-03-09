@@ -17,8 +17,27 @@ public class ImageAdapter extends BaseAdapter {
 
     // references to our images
     private ImageWithUrl[] mImageIds = {
-            new ImageWithUrl(R.drawable.united_kingdom_square_icon_640, "LoginActivity")
-
+            new ImageWithUrl(R.drawable.united_kingdom_square_icon_640, "LoginActivity"),
+            new ImageWithUrl(R.drawable.united_kingdom_square_icon_640, "LoginActivity"),
+            new ImageWithUrl(R.drawable.american_samoa_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.afghanistan_square_icon_640, "LoginActivity"),
+            new ImageWithUrl(R.drawable.andorra_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.angola_square_icon_640, "LoginActivity"),
+            new ImageWithUrl(R.drawable.argentina_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.barbados_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.bosnia_and_herzegovina_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.cambodia_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.cayman_islands_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.central_african_republic_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.chad_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.chad_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.gambia_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.hong_kong_square_icon_640, "LoginActivity"),
+            new ImageWithUrl(R.drawable.hungary_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.ireland_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.japan_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.kenya_square_icon_640,"LoginActivity"),
+            new ImageWithUrl(R.drawable.montenegro_square_icon_640,"LoginActivity")
     };
 
 //    private Integer[] mImageIds = {
