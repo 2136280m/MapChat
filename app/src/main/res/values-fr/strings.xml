@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MapChat</string>
+    <string name="maps">Plans</string>
+    <string name="chats">Chats</string>
+    <string name="profile">Profil</string>
+    <string name="title_activity_login">se connecter</string>
+    <string name="hello_blank_fragment">Bonjour fragment vierge</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe (facultatif)</string>
+    <string name="action_sign_up">Connexion ou Inscription</string>
+    <string name="action_sign_in_short">se connecter</string>
+    <string name="error_invalid_email">Cette adresse e-mail est invalide</string>
+    <string name="error_invalid_password">Ce mot de passe est trop court</string>
+    <string name="error_incorrect_password">"Ce mot de passe est incorrect "</string>
+    <string name="error_field_required">"Ce champ est requis "</string>
+    <string name="permission_rationale">Plans Chats Profil MapChat se connecter Bonjour fragment vierge Email Mot de passe (facultatif) Connexion ou Inscription se connecter Cette adresse e-mail est invalide Ce mot de passe est trop court Ce mot de passe est incorrect Ce champ est requis Les autorisations de contacts sont nécessaires pour fournir des complétions de courrier électronique. Anglais Anglais français allemand S\'identifier Conversation Entrer Toi Envoyer Entrez un message</string>
+    <string name="choose_english">Anglais</string>
+    <string name="english_button_send">Anglais</string>
+    <string name="french_button_send">français</string>
+    <string name="german_button_send">allemand</string>
+    <string name="action_log_in">S\'identifier</string>
+    <string name="individual_chat_page">Conversation</string>
+    <string name="enter">Entrer</string>
+    <string name="ownerSpinner">Plans Chats Profil MapChat se connecter Bonjour fragment vierge Email Mot de passe (facultatif) Connexion ou Inscription se connecter Cette adresse e-mail est invalide Ce mot de passe est trop court Ce mot de passe est incorrect Ce champ est requis Les autorisations de contacts sont nécessaires pour fournir des complétions de courrier électronique. Anglais Anglais français allemand S\'identifier Conversation Entrer Toi Envoyer Entrez un message</string>
+    <string name="send">Envoyer</string>
+    <string name="enter_message">"Entrez un message "</string>
+</resources>
