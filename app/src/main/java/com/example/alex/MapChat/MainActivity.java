@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Maps"));
-        tabLayout.addTab(tabLayout.newTab().setText("Chats"));
-        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.maps)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.chats)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.profile)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
