@@ -1,13 +1,20 @@
 package com.example.alex.MapChat;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.Map;
 
 /**
  * Created by Michael on 08/03/2018.
@@ -20,6 +27,11 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
     Spinner inviteSpinner;
 
     Bundle bundle = new Bundle();
+
+    EditText nameInput;
+
+
+
 
 
     //class members
@@ -42,6 +54,9 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
 
         getWindow().setLayout((int) (width*.9),(int) (height*.9));
 
+        nameInput = findViewById(R.id.hotspotNameInput);
+
+
         ownerSpinner = (Spinner) findViewById(R.id.spinner1);
         ownerSpinner.setOnItemSelectedListener(this);
 
@@ -58,12 +73,14 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         inviteSpinner.setAdapter(aa2);
 
+
+
     }
 
     //Performing action onItemSelected and onNothing selected
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-        Toast.makeText(getApplicationContext(), owners[position], Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), owners[position], Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -73,9 +90,29 @@ public class CreateHotspot extends Activity implements AdapterView.OnItemSelecte
     }
 
 
-    public void onSubmit(View  view){
+    public void onSubmit(View v) {
+
+        EventBus bus = EventBus.getDefault();
+        bus.post(new HotspotCreated(nameInput.getText().toString()));
+        this.finish();
 
     }
 
 
-}
+
+
+
+
+
+//
+
+
+
+
+
+
+
+    }
+
+
+
